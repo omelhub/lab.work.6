@@ -10,6 +10,7 @@ namespace lab.work._6
     {
         public override string WhatYouDo() => "Ищу посылку.";
         public override int WorkTime() => ((DateTime.Now.Year - DateOfEmployment.Year) * 12 + DateTime.Now.Month - DateOfEmployment.Month);
+        //(int) (DateTime.Today - DateOfEmployment).TotalDays / 30
         public override string FormatOfTime()
         {
             if (WorkTime() % 10 < 5 & WorkTime() % 10 > 1 & (WorkTime() % 100 > 20 | WorkTime() % 100 < 10))
