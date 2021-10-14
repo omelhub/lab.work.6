@@ -11,22 +11,22 @@ namespace lab.work._6
     {
         public override string WhatYouDo() => "Пополняю транспортные карты.";
 
-        public override int WorkTime()
-        {
-            int days = 0;
-            for (int i = 0; i < ((DateTime.Now.Year - DateOfEmployment.Year)); i++)
-            {
-                int d = 365;
-                if (DateTime.IsLeapYear(DateOfEmployment.Year + i))
-                {
-                    d += 1;
-                }
+        public override int WorkTime() => ((TimeSpan)(DateTime.Today - DateOfEmployment)).Days;
+        //{
+        //    int days = 0;
+        //    for (int i = 0; i < ((DateTime.Now.Year - DateOfEmployment.Year)); i++)
+        //    {
+        //        int d = 365;
+        //        if (DateTime.IsLeapYear(DateOfEmployment.Year + i))
+        //        {
+        //            d += 1;
+        //        }
 
-                days += d;
-            }
+        //        days += d;
+        //    }
 
-            return (days + DateTime.Now.DayOfYear - DateOfEmployment.DayOfYear);
-        }
+        //    return (days + DateTime.Now.DayOfYear - DateOfEmployment.DayOfYear);
+        //}
 
         public override string FormatOfTime()
         {
